@@ -4,7 +4,7 @@ mongodb-query-builder is a base function that allows you to create an update que
 ```
 let oldGame = {
   name : "DarkSouls",
-  rating : 9/10,
+  rating : "9/10",
   awards : [
     {Nominee : "BAFTA Games Award", award : "Best Strategy Game"},
     {Nominee : "Satellite Award", award : "Outstanding Role Playing Game"}
@@ -13,7 +13,7 @@ let oldGame = {
 
 let newGame = {
   name : "Demon's Souls",
-  rating : 10/10,
+  rating : "10/10",
   awards : [
     {Nominee : "BAFTA Games Award", award : "Best Role Playing Game"},
   ]
