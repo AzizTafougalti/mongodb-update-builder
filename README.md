@@ -25,7 +25,10 @@ let newGame = {
 ```
 { name: 'Demon\'s Souls',
   rating: '10/10',
-  awards: { '0': { award: 'Best Role Playing Game' }, '1': undefined } }
+  awards:
+   { '0': { award: 'Best Role Playing Game' },
+     '1': { Nominee: 'IGN', award: 'Best Role Playing Game' },
+     '2': undefined } }
 ```
 Ok now that we have the differences how do we tell mongodb how it should update the oldGame document based on these changes well this is when the mongodb-query-builder's GetQueryPayload function comes in.
 ### Code:
