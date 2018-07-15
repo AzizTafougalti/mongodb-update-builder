@@ -3,20 +3,22 @@ mongodb-query-builder is a base function that allows you to create an update que
 # Use
 ```
 let oldGame = {
-  name : "DarkSouls",
-  rating : "9/10",
-  awards : [
-    {Nominee : "BAFTA Games Award", award : "Best Strategy Game"},
-    {Nominee : "Satellite Award", award : "Outstanding Role Playing Game"}
-  ]
+    name: "DarkSouls",
+    rating: "9/10",
+    awards: [
+        { Nominee: "BAFTA Games Award", award: "Best Strategy Game" },
+        { Nominee: "Satellite Award", award: "Outstanding Role Playing Game" },
+        { Nominee: "IGN", award: "Best Role Playing Game" }
+    ]
 }
 
 let newGame = {
-  name : "Demon's Souls",
-  rating : "10/10",
-  awards : [
-    {Nominee : "BAFTA Games Award", award : "Best Role Playing Game"},
-  ]
+    name: "Demon's Souls",
+    rating: "10/10",
+    awards: [
+        { Nominee: "BAFTA Games Award", award: "Best Role Playing Game" },
+        { Nominee: "IGN", award: "Best Role Playing Game" }
+    ]
 }
 ```
 ### The deep-object-diff's diff function outputs this:
@@ -34,18 +36,19 @@ let payload = GetQueryPayload(differences, oldGame)
 As you can see the GetQueryPayload takes two arguments the differences and the original document.
 ### If we inspect payload we get:
 ```
-[
+[{
+    '$set':
     {
-        '$set':
-        {
-            name: 'Demon\'s Souls',
-            rating: '10/10',
-            'awards.0.award': 'Best Role Playing Game'
-        }
-    },
-    {
-        '$push': { awards: { '$each': [], '$slice': 1 } }
+        name: 'Demon\'s Souls',
+        rating: '10/10',
+        'awards.0.award': 'Best Role Playing Game',
+        'awards.1.Nominee': 'IGN',
+        'awards.1.award': 'Best Role Playing Game'
     }
+},
+{
+    '$push': { awards: { '$each': [], '$slice': 2 } }
+}
 ]
 ```
 As you can see its a list of querys. It's your call what you whant to do with this list(put into one object, separate...).
