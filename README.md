@@ -6,7 +6,7 @@ let oldGame = {
     name: "DarkSouls",
     rating: "9/10",
     awards: [
-        { Nominee: "AAA Games Award", award: "Best Strategy Game" },
+        { Nominee: "3A Games Award", award: "Best Strategy Game" },
         { Nominee: "Satellite Award", award: "Outstanding Role Playing Game" },
         { Nominee: "IGN", award: "Best Role Playing Game" }
     ]
@@ -16,7 +16,7 @@ let newGame = {
     name: "Demon's Souls",
     rating: "10/10",
     awards: [
-        { Nominee: "AAA Games Award", award: "Best Role Playing Game" },
+        { Nominee: "3A Games Award", award: "Best Role Playing Game" },
         { Nominee: "IGN", award: "Best Role Playing Game" }
     ]
 }
