@@ -54,4 +54,3 @@ As you can see the GetQueryPayload takes two arguments the differences and the o
 }
 ]
 ```
-As you can see its a list of querys. It's your call what you whant to do with this list(put into one object, separate...).
